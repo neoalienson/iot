@@ -15,5 +15,5 @@ To setup on Raspberry PI
 * Install Raspberry Pi OS
 * Copy config.ini.sample to config.ini and update the credentails
 * Run `raspi-config` to enable serial port and disable console for serial port
-* Install https://www.home-assistant.io/ following the 
+* Install https://www.home-assistant.io/ manually
 * Install pi-hole
