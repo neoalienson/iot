@@ -1,4 +1,7 @@
-Respository of my IoTs
+# Respository of my IoTs
+
+## pi-home
+Raspberry Pi 3 placed in my living room
 
 To setup on Raspberry PI
 1. Copy config.ini.sample to config.ini and update the credentails
