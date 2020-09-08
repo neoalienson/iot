@@ -2,6 +2,7 @@ import serial
 import time
 import urllib2
 import ConfigParser
+import json
 
 url = "https://api.thingspeak.com/update?api_key={}&field1={}&field2={}"
 
@@ -42,7 +43,7 @@ def main():
   co2_device = MHZ14A("/dev/serial0")
   co2, humidity = co2_device.get()
   if co2 > 0:
-    print {"co2": co2, "humidity": humidity}
+    print(json.dumps({"co2": co2, "humidity": humidity}))
   co2_device.close()
 
   try:
