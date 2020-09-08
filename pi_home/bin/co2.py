@@ -42,7 +42,7 @@ def main():
   co2_device = MHZ14A("/dev/serial0")
   co2, humidity = co2_device.get()
   if co2 > 0:
-    print co2, humidity
+    print {"co2": co2, "humidity": humidity}
   co2_device.close()
 
   try:
