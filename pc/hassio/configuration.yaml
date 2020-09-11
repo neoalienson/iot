@@ -6,7 +6,38 @@ default_config:
 tts:
   - platform: google_translate
 
+discovery:
+  ignore:
+    - yeelight
+yeelight:
+  devices:
+    192.168.18.149:
+      name: Gigi Light
+    192.168.18.137:
+      name: Night Light
+    192.168.18.208:
+      name: Papa Light 1
+    192.168.18.162:
+      name: Papa Light 2
+    192.168.18.199:
+      name: Mama Light 1
+    192.168.18.221:
+      name: Mama Light 2
+    192.168.18.193:
+      name: Mama Light 3
+
+fan:
+  - platform: xiaomi_miio
+    host: 192.168.18.131
+    name: Air Purifier
+    token: !secret air_purifier_token
+    model: zhimi.airpurifier.m1
+
+
 group: !include groups.yaml
 automation: !include automations.yaml
+#light: !include lights.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+sensor: !include sensors.yaml
+

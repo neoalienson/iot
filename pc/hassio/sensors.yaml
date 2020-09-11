@@ -1,0 +1,32 @@
+  - platform: template
+    sensors:
+      xiaomi_airpurifier_temp:
+        friendly_name: "Temperature"
+        value_template: "{{ state_attr('fan.air_purifier', 'temperature') }}"
+        unit_of_measurement: "°C"
+        device_class: "temperature"
+      xiaomi_airpurifier_humidity:
+        friendly_name: "Humidity"
+        value_template: "{{ state_attr('fan.air_purifier', 'humidity') }}"
+        unit_of_measurement: "%"
+        device_class: "humidity"
+      xiaomi_airpurifier_air_quality_pm25:
+        friendly_name: "Air quality"
+        value_template: "{{ state_attr('fan.air_purifier', 'aqi') }}"
+        unit_of_measurement: "μg/m³"
+        icon_template: "mdi:weather-fog"
+      xiaomi_airpurifier_speed:
+        friendly_name: "Fan speed"
+        value_template: "{{ state_attr('fan.air_purifier', 'motor_speed') }}"
+        unit_of_measurement: "rpm"
+        icon_template: "mdi:speedometer"
+      xiaomi_airpurifier_filter_remaining:
+        friendly_name: "Filter remaining"
+        value_template: "{{ state_attr('fan.air_purifier', 'filter_life_remaining') }}"
+        unit_of_measurement: "%"
+        icon_template: "mdi:heart-outline"
+      xiaomi_airpurifier_illuminance:
+        friendly_name: "Filter illuminance"
+        value_template: "{{ state_attr('fan.air_purifier', 'illuminance') }}"
+        unit_of_measurement: "lx"
+        icon_template: "mdi:brightness-5"
