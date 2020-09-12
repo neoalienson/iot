@@ -33,6 +33,12 @@ fan:
     token: !secret air_purifier_token
     model: zhimi.airpurifier.m1
 
+binary_sensor:
+  - platform: ping
+    host: 192.168.18.1
+    count: 30
+    name: Router
+    scan_interval: 600
 
 group: !include groups.yaml
 automation: !include automations.yaml

@@ -1,5 +1,13 @@
   - platform: template
     sensors:
+      ping_router_max:
+        friendly_name: "Ping max"
+        value_template: "{{ state_attr('binary_sensor.router', 'round_trip_time_max') }}"
+        unit_of_measurement: "ms"
+      ping_router_mdev:
+        friendly_name: "Ping mdev"
+        value_template: "{{ state_attr('binary_sensor.router', 'round_trip_time_mdev') }}"
+        unit_of_measurement: "ms"
       xiaomi_airpurifier_temp:
         friendly_name: "Temperature"
         value_template: "{{ state_attr('fan.air_purifier', 'temperature') }}"

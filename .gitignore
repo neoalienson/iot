@@ -1,3 +1,4 @@
 config.ini
 secrets.yaml
 *~
+home-assistant.log
