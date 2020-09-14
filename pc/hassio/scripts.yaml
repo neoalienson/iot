@@ -1,0 +1,42 @@
+my_computer_vol_mute:
+  alias: Desktop - Toggle Mute
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: iotlink/workgroup/desktop-k725ove/commands/volume/mute
+      payload: ''
+my_computer_lock:
+  alias: Desktop - Lock
+  sequence:
+  - data:
+      payload: ''
+      topic: iotlink/workgroup/desktop-k725ove/commands/lock
+    service: mqtt.publish
+  mode: single
+  icon: mdi:lock
+my_computer_displays_on:
+  alias: Desktop - Displays ON
+  sequence:
+  - data:
+      payload: ''
+      topic: iotlink/workgroup/desktop-k725ove/commands/displays/on
+    service: mqtt.publish
+  mode: single
+  icon: mdi:monitor
+my_computer_displays_off:
+  alias: Desktop - Displays OFF
+  sequence:
+  - data:
+      topic: iotlink/workgroup/desktop-k725ove/commands/displays/off
+    service: mqtt.publish
+  mode: single
+  icon: mdi:monitor-off
+my_computer_set_volume:
+  alias: ' Desktop Volume'
+  icon: mdi:music
+  mode: single
+  sequence:
+  - data:
+      payload: '0'
+      topic: iotlink/workgroup/desktop-k725ove/commands/volume/set
+    service: mqtt.publish

@@ -40,6 +40,18 @@ binary_sensor:
     name: Router
     scan_interval: 600
 
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
+
+panel_iframe:
+  radar:
+    title: HKO Radar
+    icon: mdi:blur-radial
+    url: https://www.hko.gov.hk/en/wxinfo/radars/radar_range1.htm
+
 group: !include groups.yaml
 automation: !include automations.yaml
 #light: !include lights.yaml
