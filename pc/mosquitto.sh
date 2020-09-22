@@ -1,2 +1,3 @@
-docker run -d -it -name mosquitto -p 1883:1883 -p 9001:9001 \
+docker run -d --name mosquitto -p 1883:1883 -p 9001:9001 \
+--restart=unless-stopped \
 eclipse-mosquitto

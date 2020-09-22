@@ -40,3 +40,16 @@ my_computer_set_volume:
       payload: '0'
       topic: iotlink/workgroup/desktop-k725ove/commands/volume/set
     service: mqtt.publish
+notify_deskop:
+  alias: Notify Deskop YauGi Room Temperature is too low
+  icon: mdi:monitor
+  mode: single
+  fields:
+    message:
+      description: Message
+  sequence:
+  - data:
+      payload: '{ "title": "Home Assistant", "message": "YauGi Room Tempature is too
+        low"}'
+      topic: iotlink/workgroup/desktop-k725ove/commands/notify
+    service: mqtt.publish

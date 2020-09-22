@@ -1,1 +1,36 @@
-[]
+- id: '1600421897376'
+  alias: Notify Papa when YauGi Room is too cold
+  description: ''
+  trigger:
+  - below: '25'
+    entity_id: sensor.xiaomi_airpurifier_temp
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: Yau Gi Room is too cold
+    service: notify.mobile_app_ipad
+  - data:
+      message: Yau Gi Room is too cold
+    service: notify.mobile_app_neos_iphone
+  - data:
+      message: Yau Gi Room is too cold
+    service: notify.mobile_app_mi_max_2
+  - data:
+      message: Yau Gi Room is too cold
+    service: notify.mobile_app_mi_pad_4
+  - data: {}
+    service: script.notify_deskop
+  mode: single
+- id: '1600428915526'
+  alias: Test
+  description: ''
+  trigger:
+  - at: 00:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      message: Testing
+    service: script.notify_deskop
+  mode: single

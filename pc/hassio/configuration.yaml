@@ -15,10 +15,12 @@ yeelight:
       name: Gigi Light
     192.168.18.137:
       name: Night Light
-    192.168.18.208:
-      name: Papa Light 1
     192.168.18.162:
+      name: Papa Light 1
+    192.168.18.138:
       name: Papa Light 2
+    192.168.18.208:
+      name: Yau Gi Light
     192.168.18.199:
       name: Mama Light 1
     192.168.18.221:
@@ -51,6 +53,12 @@ panel_iframe:
     title: HKO Radar
     icon: mdi:blur-radial
     url: https://www.hko.gov.hk/en/wxinfo/radars/radar_range1.htm
+
+switch:
+  - platform: xiaomi_miio
+    host: 192.168.18.112
+    token: !secret zimi_powerstrip_token
+    model: zimi.powerstrip.v2
 
 group: !include groups.yaml
 automation: !include automations.yaml
