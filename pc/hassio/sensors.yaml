@@ -8,6 +8,16 @@
         friendly_name: "Ping mdev"
         value_template: "{{ state_attr('binary_sensor.router', 'round_trip_time_mdev') }}"
         unit_of_measurement: "ms"
+      zimi_powerstrip_temp:
+        friendly_name: "Temperature"
+        value_template: "{{ state_attr('switch.xiaomi_miio_switch', 'temperature') }}"
+        unit_of_measurement: "°C"
+        device_class: "temperature"
+      zimi_powerstrip_load:
+        friendly_name: "Load"
+        value_template: "{{ state_attr('switch.xiaomi_miio_switch', 'load_power') }}"
+        unit_of_measurement: "W"
+        device_class: "power"
       xiaomi_airpurifier_temp:
         friendly_name: "Temperature"
         value_template: "{{ state_attr('fan.air_purifier', 'temperature') }}"
