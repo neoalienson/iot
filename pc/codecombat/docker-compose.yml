@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  db:
+    image: "mongo:3"
+    volumes:
+      - /home/neo/nexus/pc/codecombat/mongodb:/data/db
+  redis:
+    image: "redis"
+  web:
+    image: "codecombat"
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+  nginx:
+    image: "nginx"
+    volumes:
+      - /home/neo/nexus/pc/codecombat/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    ports:
+      - "8443:8443"
+      - "8080:8080"
+      
