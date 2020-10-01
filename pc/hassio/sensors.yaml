@@ -1,3 +1,32 @@
+  - platform: rest
+    resource: http://192.168.18.196/co2
+    name: Papa Room CO2
+    unit_of_measurement: "ppm"
+
+  - platform: rest
+    resource: http://192.168.18.196/temperature
+    name: Papa Room Temperature
+    unit_of_measurement: "°C"
+    device_class: "temperature"
+
+  - platform: rest
+    resource: http://192.168.18.196/humidity
+    name: Papa Room Humidity
+    unit_of_measurement: "%"
+    device_class: "humidity"
+
+  - platform: rest
+    resource: http://192.168.18.222/temperature
+    name: Living Room Temperature
+    unit_of_measurement: "°C"
+    device_class: "temperature"
+
+  - platform: rest
+    resource: http://192.168.18.222/humidity
+    name: Living Room Humidity
+    unit_of_measurement: "%"
+    device_class: "humidity"
+    
   - platform: template
     sensors:
       ping_router_max:

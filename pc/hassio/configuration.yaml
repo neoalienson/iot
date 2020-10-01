@@ -9,24 +9,7 @@ tts:
 discovery:
   ignore:
     - yeelight
-yeelight:
-  devices:
-    192.168.18.149:
-      name: Gigi Light
-    192.168.18.137:
-      name: Night Light
-    192.168.18.162:
-      name: Papa Light 1
-    192.168.18.138:
-      name: Papa Light 2
-    192.168.18.208:
-      name: Yau Gi Light
-    192.168.18.199:
-      name: Mama Light 1
-    192.168.18.221:
-      name: Mama Light 2
-    192.168.18.193:
-      name: Mama Light 3
+
 
 fan:
   - platform: xiaomi_miio
@@ -47,23 +30,24 @@ panel_iframe:
     title: MDI Icon Index
     icon: mdi:vector-square
     url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
-
-panel_iframe:
   radar:
     title: HKO Radar
     icon: mdi:blur-radial
     url: https://www.hko.gov.hk/en/wxinfo/radars/radar_range1.htm
 
-switch:
-  - platform: xiaomi_miio
-    host: 192.168.18.112
-    token: !secret zimi_powerstrip_token
-    model: zimi.powerstrip.v2
+
+shell_command:
+  turn_ac_on:  "curl http://{{ ip }}/toshiba_ac/on" 
+  turn_ac_off: "curl http://{{ ip }}/toshiba_ac/off"        
 
 group: !include groups.yaml
 automation: !include automations.yaml
 #light: !include lights.yaml
+input_boolean: !include input_booleans.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include sensors.yaml
+switch: !include switches.yaml
+yeelight: !include yeelights.yaml
 
+python_script: 

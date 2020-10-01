@@ -32,13 +32,15 @@ my_computer_displays_off:
   mode: single
   icon: mdi:monitor-off
 my_computer_set_volume:
-  alias: ' Desktop Volume'
-  icon: mdi:music
+  alias: Run Command
+  icon: mdi:run
   mode: single
   sequence:
   - data:
-      payload: '0'
-      topic: iotlink/workgroup/desktop-k725ove/commands/volume/set
+      payload: '{ "command": "C:\\Program Files\\qbittorrent\\qbittorrent.exe", "path":
+        "C:\\Program Files\\qbittorrent", "user": "", "visible": true, "fallback":
+        true }'
+      topic: iotlink/workgroup/desktop-k725ove/commands/run
     service: mqtt.publish
 notify_deskop:
   alias: Notify Deskop YauGi Room Temperature is too low

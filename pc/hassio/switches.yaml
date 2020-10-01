@@ -1,0 +1,22 @@
+  - platform: xiaomi_miio
+    host: 192.168.18.112
+    token: !secret zimi_powerstrip_token
+    model: zimi.powerstrip.v2
+  - platform: template
+    switches:
+      papa_room_ac:
+        value_template: '{{ states("input_boolean.papa_room_ac") }}'
+        friendly_name: 'Papa Room AC'
+        icon_template: 'mdi:air-conditioner'
+        turn_on:
+          - service: input_boolean.turn_on
+            entity_id: input_boolean.papa_room_ac
+          - service: shell_command.turn_ac_on
+            data:
+              ip: 192.168.18.196
+        turn_off:
+          - service: input_boolean.turn_off
+            entity_id: input_boolean.papa_room_ac
+          - service: shell_command.turn_ac_off
+            data:
+              ip: 192.168.18.196
