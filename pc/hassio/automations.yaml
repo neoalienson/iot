@@ -34,3 +34,49 @@
       message: Testing
     service: script.notify_deskop
   mode: single
+- id: '1608644624555'
+  alias: Tag Papa Room Light Switch is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: bdf097db-d033-4f22-ac7d-3b2b250d8f03
+  condition: []
+  action:
+  - type: toggle
+    device_id: 9f74b85c3e19b963f9369d9383fe106a
+    entity_id: light.papa_light_1
+    domain: light
+  - type: toggle
+    device_id: daca2b0cb3d002f672424397f739e631
+    entity_id: light.living_room_light_1
+    domain: light
+  mode: single
+- id: '1608646427948'
+  alias: Tag Switch on Monitors is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: c06b3e8d-e276-492b-ae27-2bcea58f41e0
+  condition: []
+  action: []
+  mode: single
+- id: '1608650834496'
+  alias: Tag Switch on Monitors and lights is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: c06b3e8d-e276-492b-ae27-2bcea58f41e0
+  condition: []
+  action:
+  - service: switch.toggle
+    data: {}
+    entity_id: switch.xiaomi_miio_switch
+  - type: toggle
+    device_id: 9f74b85c3e19b963f9369d9383fe106a
+    entity_id: light.papa_light_1
+    domain: light
+  - type: toggle
+    device_id: daca2b0cb3d002f672424397f739e631
+    entity_id: light.living_room_light_1
+    domain: light
+  mode: single
