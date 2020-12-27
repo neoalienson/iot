@@ -80,3 +80,15 @@
     entity_id: light.living_room_light_1
     domain: light
   mode: single
+- id: '1609044027614'
+  alias: Tag Push up is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: b7972b1d-9e0c-41da-94f9-b9ff8d828807
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    entity_id: counter.pushup_counter
+  mode: single

@@ -40,8 +40,12 @@ shell_command:
   turn_ac_on:  "curl http://{{ ip }}/toshiba_ac/on" 
   turn_ac_off: "curl http://{{ ip }}/toshiba_ac/off"        
 
+#homekit:
+#  advertise_ip: "192.168.18.200"
+
 group: !include groups.yaml
 automation: !include automations.yaml
+counter: !include counters.yaml
 #light: !include lights.yaml
 input_boolean: !include input_booleans.yaml
 script: !include scripts.yaml
