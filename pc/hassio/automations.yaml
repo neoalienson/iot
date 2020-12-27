@@ -51,15 +51,6 @@
     entity_id: light.living_room_light_1
     domain: light
   mode: single
-- id: '1608646427948'
-  alias: Tag Switch on Monitors is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: c06b3e8d-e276-492b-ae27-2bcea58f41e0
-  condition: []
-  action: []
-  mode: single
 - id: '1608650834496'
   alias: Tag Switch on Monitors and lights is scanned
   description: ''
@@ -79,6 +70,7 @@
     device_id: daca2b0cb3d002f672424397f739e631
     entity_id: light.living_room_light_1
     domain: light
+  - delay: '10'
   mode: single
 - id: '1609044027614'
   alias: Tag Push up is scanned
