@@ -83,4 +83,5 @@
   - service: counter.increment
     data: {}
     entity_id: counter.pushup_counter
+  - delay: '10'
   mode: single
