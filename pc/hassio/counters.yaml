@@ -1,7 +1,7 @@
   pushup_counter:
     name: Push Up
     icon: mdi:alert
-    step: 20
+    step: 22
     restore: true
     initial: 0
 
